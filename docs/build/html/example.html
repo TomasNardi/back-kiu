@@ -247,7 +247,9 @@
 <h1>Example<a class="headerlink" href="#example" title="Link to this heading">¶</a></h1>
 <section id="example-request">
 <h2>Example Request<a class="headerlink" href="#example-request" title="Link to this heading">¶</a></h2>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl<span class="w"> </span>-X<span class="w"> </span>GET<span class="w"> </span><span class="s2">&quot;http://127.0.0.1:8000/journeys/search/?origin=BUE&amp;destination=MAD&amp;date=2024-12-15&quot;</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># !Important! Make sure you have run `python manage.py runserver` and that it is running on port 8000</span>
+
+curl<span class="w"> </span>-X<span class="w"> </span>GET<span class="w"> </span><span class="s2">&quot;http://127.0.0.1:8000/journeys/search/?from=BUE&amp;to=MAD&amp;date=2024-12-15&quot;</span>
 </pre></div>
 </div>
 </section>

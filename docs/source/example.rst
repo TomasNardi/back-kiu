@@ -6,7 +6,9 @@ Example Request
 
 .. code-block:: bash
 
-   curl -X GET "http://127.0.0.1:8000/journeys/search/?origin=BUE&destination=MAD&date=2024-12-15"
+   # !Important! Make sure you have run `python manage.py runserver` and that it is running on port 8000
+
+   curl -X GET "http://127.0.0.1:8000/journeys/search/?from=BUE&to=MAD&date=2024-12-15"
 
 Example Response
 ----------------

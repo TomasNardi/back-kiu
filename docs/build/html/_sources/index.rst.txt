@@ -22,10 +22,12 @@ Project Structure
 =================
 
 - `backend/` → Django project configuration.
+- `kiu_flights/views.py` → Search Flight view function.
+- `kiu_flights/urls.py` → API endpoints.
 - `backend/kiu_flights/` → Main application handling the flight search logic.
-- `kiu_flights/flight_data/flight.json` → Static database with the flights.
-- `requirements.txt` → Dependencies required to run the project.
-- `README.md` → Description and usage guide.
+- `kiu_flights/flight_data/flight.json` → Static database containing flight information.
+- `requirements.txt` → Project dependencies.
+- `README.md` → Project description and usage guide.
 
 API Endpoints
 =============
@@ -33,18 +35,15 @@ API Endpoints
 - **`/journeys/search/`**: Main endpoint to search for flights.  
   Accepts parameters such as `origin`, `destination`, and `date`, and returns a list of matching flights.
 
-JSON Response Example
---------------------
+Please Read the Install Documentation
+--------------------------------------
 
-.. code-block:: json
+For detailed instructions, you can view the full documentation here:
 
-  {
-    "flight_number": "AR1001",
-    "from": "BUE",
-    "to": "MAD",
-    "departure_time": "2024-12-15 10:00",
-    "arrival_time": "2024-12-15 23:00"
-  }
+.. note::
+
+   Open the documentation in your browser: `KIU / Tomas Nardi Documentation <installation.html>`_
+
 
 Detailed Documentation
 ======================
