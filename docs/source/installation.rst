@@ -38,8 +38,3 @@ To get started with the project and read the full documentation locally, follow 
 
       docs/build/html/index.html
 
-   This will open the **project documentation** where you will find detailed instructions on:
-   
-   - Starting the server
-   - Using the available API endpoints
-   - Running tests

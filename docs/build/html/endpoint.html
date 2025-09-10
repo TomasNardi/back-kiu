@@ -3,10 +3,10 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
-<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" />
+<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="prev" title="Example" href="example.html" />
 
     <!-- Generated with Sphinx 8.2.3 and Furo 2025.07.19 -->
-        <title>Test Module - kiu-test 0.1 documentation</title>
+        <title>Kiu Flights API - kiu-test 0.1 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=d111a655" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=25af2a20" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?v=8dab3a3b" />
@@ -178,7 +178,7 @@
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
       </div>
-      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
         <div class="visually-hidden">Toggle table of contents sidebar</div>
         <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
       </label>
@@ -197,7 +197,13 @@
   <input type="hidden" name="area" value="default">
 </form>
 <div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
-  
+  <p class="caption" role="heading"><span class="caption-text">Contenidos:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="example.html">Example</a></li>
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Kiu Flights API</a></li>
+</ul>
+
 </div>
 </div>
 
@@ -216,7 +222,7 @@
         </a>
         <div class="content-icon-container">
           <div class="view-this-page">
-  <a class="muted-link" href="_sources/test.rst.txt" title="View this page">
+  <a class="muted-link" href="_sources/endpoint.rst.txt" title="View this page">
     <svg><use href="#svg-eye"></use></svg>
     <span class="visually-hidden">View this page</span>
   </a>
@@ -230,14 +236,62 @@
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
           </div>
-          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
             <div class="visually-hidden">Toggle table of contents sidebar</div>
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
         </div>
         <article role="main" id="furo-main-content">
-          <section id="test-module">
-<h1>Test Module<a class="headerlink" href="#test-module" title="Link to this heading">¶</a></h1>
+          <section id="module-kiu_flights.views">
+<span id="kiu-flights-api"></span><h1>Kiu Flights API<a class="headerlink" href="#module-kiu_flights.views" title="Link to this heading">¶</a></h1>
+<dl class="py function">
+<dt class="sig sig-object py" id="kiu_flights.views.search_flights">
+<span class="sig-prename descclassname"><span class="pre">kiu_flights.views.</span></span><span class="sig-name descname"><span class="pre">search_flights</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kiu_flights.views.search_flights" title="Link to this definition">¶</a></dt>
+<dd><p>Search for flights based on departure date, origin, and destination.</p>
+<p>This function is divided into two main parts:</p>
+<ol class="arabic">
+<li><p>Input validation (pre-filter):
+- Ensures that all required query parameters (<cite>date</cite>, <cite>from</cite>, <cite>to</cite>) are provided.
+- Checks that city codes are exactly 3 uppercase letters.
+- Validates that the date is in the ‘YYYY-MM-DD’ format.
+- Returns a 400 error if any validation fails.</p></li>
+<li><p>Flight search (data filter):
+- Loads flight data from a JSON file.
+- Iterates through all flights and selects those that match:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><cite>from_city</cite> == departure_city</p></li>
+<li><p><cite>to_city</cite> == arrival_city</p></li>
+<li><p><cite>date_str</cite> matches the departure date</p></li>
+</ul>
+</div></blockquote>
+<ul class="simple">
+<li><p>Returns a list of matching flights with relevant information.</p></li>
+<li><p>Returns an empty list if no flights are found.</p></li>
+</ul>
+</li>
+</ol>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>request</strong> (<em>Request</em>) – A DRF Request object containing GET parameters:
+- <cite>date</cite> (str): Departure date in ‘YYYY-MM-DD’ format.
+- <cite>from</cite> (str): 3-letter uppercase code of the origin city.
+- <cite>to</cite> (str): 3-letter uppercase code of the destination city.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p>400 error with message if input is invalid.</p></li>
+<li><p>A list of matching flights with keys: <cite>flight_number</cite>, <cite>from</cite>, <cite>to</cite>,
+<cite>departure_time</cite>, <cite>arrival_time</cite>.</p></li>
+</ul>
+</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Response</p>
+</dd>
+</dl>
+</dd></dl>
+
 </section>
 
         </article>
@@ -246,7 +300,17 @@
         
         <div class="related-pages">
           
-          
+          <a class="prev-page" href="example.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Example</div>
+                
+              </div>
+            </a>
         </div>
         <div class="bottom-of-page">
           <div class="left-details">
@@ -265,8 +329,27 @@
         
       </footer>
     </div>
-    <aside class="toc-drawer no-toc">
+    <aside class="toc-drawer">
       
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Kiu Flights API</a><ul>
+<li><a class="reference internal" href="#kiu_flights.views.search_flights"><code class="docutils literal notranslate"><span class="pre">search_flights()</span></code></a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
       
       
     </aside>

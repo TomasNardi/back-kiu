@@ -8,9 +8,17 @@ author = 'tomas nardi'
 release = '0.1'
 
 # -- Path setup --------------------------------------------------------------
+import os
 import sys
 from pathlib import Path
-sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
+
+# Añadir la carpeta backend al PYTHONPATH
+sys.path.insert(0, os.path.abspath(os.path.join(Path(__file__).resolve().parents[2], 'backend')))
+
+# Inicializar Django
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'backend.settings')  # Ajusta según tu settings.py
+import django
+django.setup()
 
 # -- General configuration ---------------------------------------------------
 extensions = [

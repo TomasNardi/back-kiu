@@ -1,40 +1,40 @@
 KIU / Tomas Nardi Documentation
 ================================
 
-Creado por **Tomas Nardi** para la prueba técnica de ingreso a la compañía KIU - Nivel Junior.
+Created by **Tomas Nardi** for the technical entry test for the company KIU - Junior Level.
 
-Descripción del Proyecto
-========================
+Project Description
+===================
 
-**End Point Buscador de Vuelos para Pasajeros**
+**Flight Search Endpoint for Passengers**
 
-Este proyecto consiste en el desarrollo de una **API REST simple** que permite **buscar vuelos directos** utilizando una **base de datos estática en formato JSON**. La API está diseñada para ser:
+This project consists of the development of a **simple REST API** that allows **searching for direct flights** using a **static JSON database**. The API is designed to be:
 
-- **Sencilla y fácil de entender.**
-- **Modular**, con un único endpoint.
+- **Simple and easy to understand.**
+- **Modular**, with a single endpoint.
 
-Objetivo
-========
+Objective
+=========
 
-El objetivo principal es demostrar conocimientos básicos de **Python**, **Django**, y **REST API**, creando un sistema funcional de búsqueda de vuelos.
+The main objective is to demonstrate basic knowledge of **Python**, **Django**, and **REST API**, creating a functional flight search system.
 
-Estructura del Proyecto
-=======================
+Project Structure
+=================
 
-- `backend /` → Configuración del proyecto Django.
-- `backend/kiu_flights /` → Aplicación principal que maneja la lógica de búsqueda de vuelos.
-- `kiu_flights / flight_data / flight.json` → Base de datos estática con los vuelos.
-- `requirements.txt` → Dependencias necesarias para ejecutar el proyecto.
-- `README.md` → Descripción y guía de uso.
+- `backend/` → Django project configuration.
+- `backend/kiu_flights/` → Main application handling the flight search logic.
+- `kiu_flights/flight_data/flight.json` → Static database with the flights.
+- `requirements.txt` → Dependencies required to run the project.
+- `README.md` → Description and usage guide.
 
-Documentación de Endpoints
-==========================
+API Endpoints
+=============
 
-- **`/journeys/search/`**: Endpoint principal para buscar vuelos.  
-  Recibe parámetros como `origin`, `destination` y `date`, y devuelve una lista de vuelos coincidentes.
+- **`/journeys/search/`**: Main endpoint to search for flights.  
+  Accepts parameters such as `origin`, `destination`, and `date`, and returns a list of matching flights.
 
-Ejemplo de respuesta JSON
--------------------------
+JSON Response Example
+--------------------
 
 .. code-block:: json
 
@@ -46,18 +46,15 @@ Ejemplo de respuesta JSON
     "arrival_time": "2024-12-15 23:00"
   }
 
-API Endpoints
-=============
+Detailed Documentation
+======================
 
-.. automodule:: kiu_flights.views
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
+For more details and descriptions of each endpoint, navigate to the following link:
 
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
 
    installation
-   api
+   example
+   endpoint

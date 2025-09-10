@@ -72,15 +72,13 @@ def search_flights(request):
 
     # 4 (Objetive). Filtrado: Solo mostrar vuelos que coincidan exactamente con los parámetros , sino devolver [].
     # Results after searching flight.json! 
+    
     results = []
     for flight in flights:
-        """
-        Check for a full match between the flight data and the query parameters.
-        
-        Note:
-            - Use `append` because there could be more than one flight
-            that matches the same origin, destination, and date.
-        """
+    # Check for a full match between the flight data and the query parameters.
+    # Note:
+    #   - Use `append` because there could be more than one flight
+    #     that matches the same origin, destination, and date.
         if (flight['departure_city'] == from_city and
             flight['arrival_city'] == to_city and
             flight['departure_datetime'].startswith(date_str)):
@@ -92,5 +90,6 @@ def search_flights(request):
                 "departure_time": flight['departure_datetime'][:16].replace("T", " "),
                 "arrival_time": flight['arrival_datetime'][:16].replace("T", " ")
             })
+
 
     return Response(results)

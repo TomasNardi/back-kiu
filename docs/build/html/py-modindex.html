@@ -2,12 +2,10 @@
 <html class="no-js" lang="en" data-content_root="./">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
-<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Installation" href="installation.html" />
+    <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" />
 
-    <!-- Generated with Sphinx 8.2.3 and Furo 2025.07.19 -->
-        <title>kiu-test 0.1 documentation</title>
-      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=d111a655" />
+    <!-- Generated with Sphinx 8.2.3 and Furo 2025.07.19 --><title>Python Module Index - kiu-test 0.1 documentation</title>
+<link rel="stylesheet" type="text/css" href="_static/pygments.css?v=d111a655" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=25af2a20" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?v=8dab3a3b" />
     
@@ -166,7 +164,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="#"><div class="brand">kiu-test 0.1 documentation</div></a>
+      <a href="index.html"><div class="brand">kiu-test 0.1 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -187,7 +185,7 @@
   <aside class="sidebar-drawer">
     <div class="sidebar-container">
       
-      <div class="sidebar-sticky"><a class="sidebar-brand" href="#">
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="index.html">
   
   <span class="sidebar-brand-text">kiu-test 0.1 documentation</span>
   
@@ -221,13 +219,7 @@
           <span>Back to top</span>
         </a>
         <div class="content-icon-container">
-          <div class="view-this-page">
-  <a class="muted-link" href="_sources/index.rst.txt" title="View this page">
-    <svg><use href="#svg-eye"></use></svg>
-    <span class="visually-hidden">View this page</span>
-  </a>
-</div>
-<div class="theme-toggle-container theme-toggle-content">
+          <div class="theme-toggle-container theme-toggle-content">
             <button class="theme-toggle">
               <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
               <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
@@ -242,86 +234,39 @@
           </label>
         </div>
         <article role="main" id="furo-main-content">
-          <section id="kiu-tomas-nardi-documentation">
-<h1>KIU / Tomas Nardi Documentation<a class="headerlink" href="#kiu-tomas-nardi-documentation" title="Link to this heading">¶</a></h1>
-<p>Created by <strong>Tomas Nardi</strong> for the technical entry test for the company KIU - Junior Level.</p>
+          
+<section class="domainindex-section">
+  <h1>Python Module Index</h1>
+  <div class="domainindex-jumpbox"><a href="#cap-k"><strong>k</strong></a></div>
 </section>
-<section id="project-description">
-<h1>Project Description<a class="headerlink" href="#project-description" title="Link to this heading">¶</a></h1>
-<p><strong>Flight Search Endpoint for Passengers</strong></p>
-<p>This project consists of the development of a <strong>simple REST API</strong> that allows <strong>searching for direct flights</strong> using a <strong>static JSON database</strong>. The API is designed to be:</p>
-<ul class="simple">
-<li><p><strong>Simple and easy to understand.</strong></p></li>
-<li><p><strong>Modular</strong>, with a single endpoint.</p></li>
-</ul>
-</section>
-<section id="objective">
-<h1>Objective<a class="headerlink" href="#objective" title="Link to this heading">¶</a></h1>
-<p>The main objective is to demonstrate basic knowledge of <strong>Python</strong>, <strong>Django</strong>, and <strong>REST API</strong>, creating a functional flight search system.</p>
-</section>
-<section id="project-structure">
-<h1>Project Structure<a class="headerlink" href="#project-structure" title="Link to this heading">¶</a></h1>
-<ul class="simple">
-<li><p><cite>backend/</cite> → Django project configuration.</p></li>
-<li><p><cite>backend/kiu_flights/</cite> → Main application handling the flight search logic.</p></li>
-<li><p><cite>kiu_flights/flight_data/flight.json</cite> → Static database with the flights.</p></li>
-<li><p><cite>requirements.txt</cite> → Dependencies required to run the project.</p></li>
-<li><p><cite>README.md</cite> → Description and usage guide.</p></li>
-</ul>
-</section>
-<section id="api-endpoints">
-<h1>API Endpoints<a class="headerlink" href="#api-endpoints" title="Link to this heading">¶</a></h1>
-<ul class="simple">
-<li><p><strong>`/journeys/search/`</strong>: Main endpoint to search for flights.
-Accepts parameters such as <cite>origin</cite>, <cite>destination</cite>, and <cite>date</cite>, and returns a list of matching flights.</p></li>
-</ul>
-<section id="json-response-example">
-<h2>JSON Response Example<a class="headerlink" href="#json-response-example" title="Link to this heading">¶</a></h2>
-<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;flight_number&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;AR1001&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;from&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;BUE&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;to&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;MAD&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;departure_time&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2024-12-15 10:00&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;arrival_time&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2024-12-15 23:00&quot;</span>
-<span class="p">}</span>
-</pre></div>
-</div>
-</section>
-</section>
-<section id="detailed-documentation">
-<h1>Detailed Documentation<a class="headerlink" href="#detailed-documentation" title="Link to this heading">¶</a></h1>
-<p>For more details and descriptions of each endpoint, navigate to the following link:</p>
-<div class="toctree-wrapper compound">
-<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="example.html">Example</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="example.html#example-request">Example Request</a></li>
-<li class="toctree-l2"><a class="reference internal" href="example.html#example-response">Example Response</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="endpoint.html">Kiu Flights API</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="endpoint.html#kiu_flights.views.search_flights"><code class="docutils literal notranslate"><span class="pre">search_flights()</span></code></a></li>
-</ul>
-</li>
-</ul>
-</div>
-</section>
+<table class="domainindex-table">
+  <tr class="pcap">
+    <td></td><td>&#160;</td><td></td>
+  </tr>
+  <tr class="cap" id="cap-k">
+    <td></td><td><strong>k</strong></td><td></td>
+  </tr>
+  <tr>
+    <td><img src="_static/minus.png" class="toggler"
+              id="toggle-1" style="display: none" alt="-" /></td>
+    <td>
+        <code class="xref">kiu_flights</code></td><td>
+    <em></em></td>
+  </tr>
+  <tr class="cg-1">
+    <td></td>
+    <td>&#160;&#160;&#160;
+        <a href="endpoint.html#module-kiu_flights.views"><code class="xref">kiu_flights.views</code></a></td><td>
+    <em></em></td>
+  </tr>
+</table>
 
         </article>
       </div>
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="installation.html">
-              <div class="page-info">
-                <div class="context">
-                  <span>Next</span>
-                </div>
-                <div class="title">Installation</div>
-              </div>
-              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
-            </a>
+          
           
         </div>
         <div class="bottom-of-page">
