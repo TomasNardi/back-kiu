@@ -1,0 +1,25 @@
+# Virtual environment
+.venv/
+
+# Python compiled files and caches
+__pycache__/
+*.py[cod]
+*$py.class
+
+# SQLite database
+*.sqlite3
+
+# Logs
+*.log
+
+# Backup files
+*~
+*.bak
+
+# Sphinx build
+docs/_build/
+
+# IDEs and system files
+.vscode/
+.idea/
+.DS_Store
