@@ -11,14 +11,15 @@ class SearchFlightsTestCase(APITestCase):
     Test for the `search_flights` API endpoint.
 
     This class tests various scenarios for the flight search view:
-    
-    # 1 (Objetive). Parámetros obligatorios: Los 3 parámetros (date, from, to) deben estar presentes
-    # 2 (Objetive). Formato de fecha: Debe ser YYYY-MM-DD
-    # 3 (Objetive). Códigos de ciudad: Deben ser exactamente 3 letras mayúsculas.
-    # 4 (Objetive). Filtrado: Solo mostrar vuelos que coincidan exactamente con los parámetros , sino devolver [].
- 
-    The tests use a temporary JSON file located in `flight_data/flight.json`. 
-    
+
+    **Objectives:**
+
+    - Parámetros obligatorios: Los 3 parámetros (date, from, to) deben estar presentes.
+    - Formato de fecha: Debe ser YYYY-MM-DD.
+    - Códigos de ciudad: Deben ser exactamente 3 letras mayúsculas.
+    - Filtrado: Solo mostrar vuelos que coincidan exactamente con los parámetros, sino devolver [].
+
+    The tests use a temporary JSON file located in `flight_data/flight.json`.
     """
 
     @classmethod
