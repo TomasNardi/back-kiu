@@ -8,7 +8,7 @@ from django.conf import settings
 import os
 
 # JSON file path - always use relative paths, avoid absolute paths in production
-FLIGHTS_JSON_PATH = os.path.join(settings.BASE_DIR, 'kiu_vuelos', 'flight_data', 'flight.json')
+FLIGHTS_JSON_PATH = os.path.join(settings.BASE_DIR, 'kiu_flights', 'flight_data', 'flight.json')
 
 @api_view(['GET'])
 def search_flights(request):

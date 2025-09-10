@@ -22,7 +22,7 @@ Estructura del Proyecto
 ----------------------
 
 - `kiu_tomas_nardi/` → Configuración del proyecto Django.
-- `kiu_vuelos/` → Aplicación principal que maneja la lógica de búsqueda de vuelos.
+- `kiu_flights/` → Aplicación principal que maneja la lógica de búsqueda de vuelos.
 - `flight_data/flight.json` → Base de datos estática con los vuelos.
 - `requirements.txt` → Dependencias necesarias para ejecutar el proyecto.
 - `README.md` → Descripción y guía de uso.
