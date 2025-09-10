@@ -10,27 +10,31 @@ Getting started is easy! Follow these steps to have the project running locally 
 
 1. Clone the repository
 
-bash
+```bash
 git clone https://github.com/TomasNardi/Kiu-tomas-nardi
 cd Kiu-tomas-nardi
+```
 
 2. Create and activate a virtual environment
 
-bash
+```bash
 # Linux / Mac
 python -m venv .venv
 source .venv/bin/activate
 # Windows
 python -m venv .venv
 .venv\Scripts\activate
+```
 
 3. Install dependencies
 
-bash
+```bash
 pip install -r requirements.txt
+```
 
 4. Open the documentation locally
-bash
+
+```bash
 cd docs/build/html
 # Windows
 start index.html
@@ -38,6 +42,7 @@ start index.html
 open index.html
 # Linux (most distributions)
 xdg-open index.html
+```
 
 ---
 ## 📖 Usage
