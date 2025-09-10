@@ -22,10 +22,11 @@ Project Structure
 =================
 
 - `backend/` → Django project configuration.
-- `kiu_flights/views.py` → Search Flight view function.
-- `kiu_flights/urls.py` → API endpoints.
+- `backend/kiu_flights/views.py` → Search Flight view function.
+- `backend/kiu_flights/test_flights` → Testing Endpoint.
+- `backend/kiu_flights/urls.py` → API endpoints.
 - `backend/kiu_flights/` → Main application handling the flight search logic.
-- `kiu_flights/flight_data/flight.json` → Static database containing flight information.
+- `backend/kiu_flights/flight_data/flight.json` → Static database containing flight information.
 - `requirements.txt` → Project dependencies.
 - `README.md` → Project description and usage guide.
 
@@ -58,3 +59,4 @@ For more details and descriptions of each endpoint, navigate to the following li
    example
    endpoint
    testing
+   usage

@@ -46,7 +46,7 @@ xdg-open index.html
 
 ---
 ## 📖 Usage
+
+![API Documentation Diagram](assets/diagram.png)
+
 After installation, you can start the API server and begin making requests to search and manage flight information.
-
-
-

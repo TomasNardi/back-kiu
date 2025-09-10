@@ -3,7 +3,7 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
-<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="prev" title="Kiu Flights API" href="endpoint.html" />
+<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Usage" href="usage.html" /><link rel="prev" title="Kiu Flights API" href="endpoint.html" />
 
     <!-- Generated with Sphinx 8.2.3 and Furo 2025.07.19 -->
         <title>Testing API - kiu-test 0.1 documentation</title>
@@ -203,6 +203,7 @@
 <li class="toctree-l1"><a class="reference internal" href="example.html">Example</a></li>
 <li class="toctree-l1"><a class="reference internal" href="endpoint.html">Kiu Flights API</a></li>
 <li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Testing API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="usage.html">Usage</a></li>
 </ul>
 
 </div>
@@ -243,9 +244,32 @@
           </label>
         </div>
         <article role="main" id="furo-main-content">
-          <section id="module-kiu_flights.test_flights">
-<span id="testing-api"></span><h1>Testing API<a class="headerlink" href="#module-kiu_flights.test_flights" title="Link to this heading">¶</a></h1>
-<dl class="py class">
+          <section id="testing-api">
+<h1>Testing API<a class="headerlink" href="#testing-api" title="Link to this heading">¶</a></h1>
+<p>To use the testing section, you should be in the same directory as <cite>manage.py</cite> :</p>
+<p><cite>Kiu-tomas-nardibackend</cite> → then run:</p>
+<blockquote>
+<div><p>python manage.py test kiu_flights.test_flights</p>
+</div></blockquote>
+<p>In the PowerShell console, you should see a message like this:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">Each dot represents a unit test</span>
+<span class="go">.....</span>
+
+<span class="go">Found 5 test(s).</span>
+<span class="go">Creating test database for alias &#39;default&#39;...</span>
+<span class="go">System check identified no issues (0 silenced).</span>
+
+<span class="go">Ran 5 tests in 0.670s</span>
+
+<span class="go">OK</span>
+<span class="go">Destroying test database for alias &#39;default&#39;...</span>
+</pre></div>
+</div>
+<p>Also, if you want to see the full test cases, you should go to:</p>
+<ul class="simple">
+<li><p><cite>backend/kiu_flights/test_flights</cite> → Testing Endpoint.</p></li>
+</ul>
+<dl class="py class" id="module-kiu_flights.test_flights">
 <dt class="sig sig-object py" id="kiu_flights.test_flights.SearchFlightsTestCase">
 <em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">kiu_flights.test_flights.</span></span><span class="sig-name descname"><span class="pre">SearchFlightsTestCase</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">methodName</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'runTest'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kiu_flights.test_flights.SearchFlightsTestCase" title="Link to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">APITestCase</span></code></p>
@@ -311,7 +335,15 @@ if no flights match the query parameters.</p>
       <footer>
         
         <div class="related-pages">
-          
+          <a class="next-page" href="usage.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Usage</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
           <a class="prev-page" href="endpoint.html">
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">

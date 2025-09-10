@@ -3,10 +3,10 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
-<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Testing API" href="testing.html" /><link rel="prev" title="Example" href="example.html" />
+<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="prev" title="Testing API" href="testing.html" />
 
     <!-- Generated with Sphinx 8.2.3 and Furo 2025.07.19 -->
-        <title>Kiu Flights API - kiu-test 0.1 documentation</title>
+        <title>Usage - kiu-test 0.1 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=d111a655" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=25af2a20" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?v=8dab3a3b" />
@@ -178,7 +178,7 @@
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
       </div>
-      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
         <div class="visually-hidden">Toggle table of contents sidebar</div>
         <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
       </label>
@@ -201,9 +201,9 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="example.html">Example</a></li>
-<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Kiu Flights API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="endpoint.html">Kiu Flights API</a></li>
 <li class="toctree-l1"><a class="reference internal" href="testing.html">Testing API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="usage.html">Usage</a></li>
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Usage</a></li>
 </ul>
 
 </div>
@@ -224,7 +224,7 @@
         </a>
         <div class="content-icon-container">
           <div class="view-this-page">
-  <a class="muted-link" href="_sources/endpoint.rst.txt" title="View this page">
+  <a class="muted-link" href="_sources/usage.rst.txt" title="View this page">
     <svg><use href="#svg-eye"></use></svg>
     <span class="visually-hidden">View this page</span>
   </a>
@@ -238,64 +238,37 @@
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
           </div>
-          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
             <div class="visually-hidden">Toggle table of contents sidebar</div>
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
         </div>
         <article role="main" id="furo-main-content">
-          <section id="kiu-flights-api">
-<h1>Kiu Flights API<a class="headerlink" href="#kiu-flights-api" title="Link to this heading">¶</a></h1>
-<p>This endpoint is created in the backend at :
-<cite>backend/kiu_flights/views</cite> → Search Flight View function.</p>
-<dl class="py function" id="module-kiu_flights.views">
-<dt class="sig sig-object py" id="kiu_flights.views.search_flights">
-<span class="sig-prename descclassname"><span class="pre">kiu_flights.views.</span></span><span class="sig-name descname"><span class="pre">search_flights</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kiu_flights.views.search_flights" title="Link to this definition">¶</a></dt>
-<dd><p>Search for flights based on departure date, origin, and destination.</p>
-<p>This function is divided into two main parts:</p>
+          <section id="usage">
+<h1>Usage<a class="headerlink" href="#usage" title="Link to this heading">¶</a></h1>
+<p>To use the Api and Testing :</p>
 <ol class="arabic">
-<li><p>Input validation (pre-filter):
-- Ensures that all required query parameters (<cite>date</cite>, <cite>from</cite>, <cite>to</cite>) are provided.
-- Checks that city codes are exactly 3 uppercase letters.
-- Validates that the date is in the ‘YYYY-MM-DD’ format.
-- Returns a 400 error if any validation fails.</p></li>
-<li><p>Flight search (data filter):
-- Loads flight data from a JSON file.
-- Iterates through all flights and selects those that match:</p>
+<li><p><strong>Be sure to read the Installation Guide:</strong></p>
 <blockquote>
-<div><ul class="simple">
-<li><p><cite>from_city</cite> == departure_city</p></li>
-<li><p><cite>to_city</cite> == arrival_city</p></li>
-<li><p><cite>date_str</cite> matches the departure date</p></li>
-</ul>
+<div><p><a class="reference external" href="installation.html">KIU Installation Section</a></p>
 </div></blockquote>
-<ul class="simple">
-<li><p>Returns a list of matching flights with relevant information.</p></li>
-<li><p>Returns an empty list if no flights are found.</p></li>
-</ul>
 </li>
-</ol>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>request</strong> (<em>Request</em>) – A DRF Request object containing GET parameters:
-- <cite>date</cite> (str): Departure date in ‘YYYY-MM-DD’ format.
-- <cite>from</cite> (str): 3-letter uppercase code of the origin city.
-- <cite>to</cite> (str): 3-letter uppercase code of the destination city.</p>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p><ul class="simple">
-<li><p>400 error with message if input is invalid.</p></li>
-<li><p>A list of matching flights with keys: <cite>flight_number</cite>, <cite>from</cite>, <cite>to</cite>,
-<cite>departure_time</cite>, <cite>arrival_time</cite>.</p></li>
-</ul>
-</p>
-</dd>
-<dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>Response</p>
+<li><p><strong>You must navigate to the backend directory and run:</strong></p>
+<blockquote>
+<div><dl class="simple">
+<dt># By default it should be on port 8000</dt><dd><p>python manage.py runserver</p>
 </dd>
 </dl>
-</dd></dl>
+</div></blockquote>
+</li>
+<li><p><strong>Then you can execute queries to the endpoint:</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl<span class="w"> </span>-X<span class="w"> </span>GET<span class="w"> </span><span class="s2">&quot;http://127.0.0.1:8000/journeys/search/?from=BUE&amp;to=MAD&amp;date=2024-12-15&quot;</span>
 
+It<span class="w"> </span>is<span class="w"> </span>recommended<span class="w"> </span>to<span class="w"> </span><span class="nb">read</span><span class="w"> </span>the<span class="w"> </span>Examples<span class="w"> </span>section.
+</pre></div>
+</div>
+</li>
+</ol>
 </section>
 
         </article>
@@ -303,23 +276,15 @@
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="testing.html">
-              <div class="page-info">
-                <div class="context">
-                  <span>Next</span>
-                </div>
-                <div class="title">Testing API</div>
-              </div>
-              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
-            </a>
-          <a class="prev-page" href="example.html">
+          
+          <a class="prev-page" href="testing.html">
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
                   <span>Previous</span>
                 </div>
                 
-                <div class="title">Example</div>
+                <div class="title">Testing API</div>
                 
               </div>
             </a>
@@ -341,27 +306,8 @@
         
       </footer>
     </div>
-    <aside class="toc-drawer">
+    <aside class="toc-drawer no-toc">
       
-      
-      <div class="toc-sticky toc-scroll">
-        <div class="toc-title-container">
-          <span class="toc-title">
-            On this page
-          </span>
-        </div>
-        <div class="toc-tree-container">
-          <div class="toc-tree">
-            <ul>
-<li><a class="reference internal" href="#">Kiu Flights API</a><ul>
-<li><a class="reference internal" href="#kiu_flights.views.search_flights"><code class="docutils literal notranslate"><span class="pre">search_flights()</span></code></a></li>
-</ul>
-</li>
-</ul>
-
-          </div>
-        </div>
-      </div>
       
       
     </aside>
