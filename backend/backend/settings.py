@@ -44,7 +44,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
-    'kiu_flights',
+    'backend.kiu_flights',
 ]
 
 MIDDLEWARE = [
